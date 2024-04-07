@@ -8,7 +8,12 @@ const socket_io_1 = require("socket.io");
 const ChatMessage_1 = __importDefault(require("../models/ChatMessage"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 function initializeSocket(server) {
-    const io = new socket_io_1.Server(server, {});
+    const io = new socket_io_1.Server(server, {
+        cors: {
+            origin: '*',
+            methods: ["GET", "POST"],
+        },
+    });
     io.use((socket, next) => {
         if (socket.handshake.auth.token) {
             const { user } = jsonwebtoken_1.default.verify(socket.handshake.auth.token, process.env.JWT_SECRET);
