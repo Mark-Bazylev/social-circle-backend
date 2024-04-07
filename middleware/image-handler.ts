@@ -2,7 +2,7 @@ import multer from "multer";
 import path from "path";
 import { v4 as uuidv4 } from "uuid";
 import { AccountDetails } from "../models/Account";
-import { AuthenticatedRequest } from "./authentication";
+import {AuthenticatedRequest} from "../models";
 
 export interface AuthenticatedAccountRequest extends AuthenticatedRequest {
   body: AccountDetails & { files: FileList };
