@@ -33,10 +33,7 @@ export function initializeSocket(
     InterServerEvents,
     SocketData
   >(server, {
-    cors: {
-      origin: process.env.FRONTEND_URL,
-      methods: ["GET", "POST"],
-    },
+
   });
   io.use((socket, next) => {
     if (socket.handshake.auth.token) {
