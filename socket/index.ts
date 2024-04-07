@@ -34,7 +34,7 @@ export function initializeSocket(
     SocketData
   >(server, {
     cors: {
-      origin: "http://localhost:9000",
+      origin: process.env.FRONTEND_URL,
       methods: ["GET", "POST"],
     },
   });
