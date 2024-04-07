@@ -10,7 +10,7 @@ const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 function initializeSocket(server) {
     const io = new socket_io_1.Server(server, {
         cors: {
-            origin: "http://localhost:9000",
+            origin: process.env.FRONTEND_URL,
             methods: ["GET", "POST"],
         },
     });
