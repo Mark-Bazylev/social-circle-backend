@@ -44,7 +44,6 @@ export function initializeSocket(
         socket.handshake.auth.token,
         process.env.JWT_SECRET!,
       ) as JwtPayload;
-      console.log(user);
       socket.data.userId = user._id?.toString() || "";
     }
     next();
@@ -79,7 +78,6 @@ export function initializeSocket(
     //   socket.emit("nextSentMessages", reversedNextMessages);
     // });
     socket.on("message", async (messageContent) => {
-      console.log(messageContent);
       if (!messageContent) {
         return;
       }

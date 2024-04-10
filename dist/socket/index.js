@@ -17,7 +17,6 @@ function initializeSocket(server) {
     io.use((socket, next) => {
         if (socket.handshake.auth.token) {
             const { user } = jsonwebtoken_1.default.verify(socket.handshake.auth.token, process.env.JWT_SECRET);
-            console.log(user);
             socket.data.userId = user._id?.toString() || "";
         }
         next();
@@ -49,7 +48,6 @@ function initializeSocket(server) {
         //   socket.emit("nextSentMessages", reversedNextMessages);
         // });
         socket.on("message", async (messageContent) => {
-            console.log(messageContent);
             if (!messageContent) {
                 return;
             }
