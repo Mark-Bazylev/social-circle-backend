@@ -120,7 +120,6 @@ export async function changeEmail(
       throw new BadRequestError("Email Already Exists");
     }
     const currentUser = await User.findById(user?._id);
-    console.log(currentUser);
     if (!currentUser) {
       throw new UnauthenticatedError("Invalid Credentials");
     }

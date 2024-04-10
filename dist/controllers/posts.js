@@ -127,7 +127,6 @@ async function likePost(req, res, next) {
             else {
                 console.log("already liked");
             }
-            console.log(postId);
         }
         res.status(http_status_codes_1.StatusCodes.OK).json(post);
     }
@@ -150,7 +149,6 @@ async function unlikePost(req, res, next) {
             else {
                 console.log("already unliked");
             }
-            console.log(postId);
         }
         res.status(http_status_codes_1.StatusCodes.OK).json(post);
     }

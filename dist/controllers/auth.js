@@ -94,7 +94,6 @@ async function changeEmail(req, res, next) {
             throw new errors_1.BadRequestError("Email Already Exists");
         }
         const currentUser = await User_1.default.findById(user?._id);
-        console.log(currentUser);
         if (!currentUser) {
             throw new errors_1.UnauthenticatedError("Invalid Credentials");
         }

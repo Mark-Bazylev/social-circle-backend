@@ -167,7 +167,6 @@ export async function likePost(
       } else {
         console.log("already liked");
       }
-      console.log(postId);
     }
     res.status(StatusCodes.OK).json(post);
   } catch (e) {
@@ -199,7 +198,6 @@ export async function unlikePost(
       } else {
         console.log("already unliked");
       }
-      console.log(postId);
     }
     res.status(StatusCodes.OK).json(post);
   } catch (e) {

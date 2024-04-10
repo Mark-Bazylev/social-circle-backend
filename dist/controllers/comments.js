@@ -97,7 +97,6 @@ async function likeComment(req, res, next) {
             else {
                 console.log("already liked");
             }
-            console.log(commentId);
         }
         res.status(http_status_codes_1.StatusCodes.OK).json(comment);
     }

@@ -137,7 +137,6 @@ export async function likeComment(
       } else {
         console.log("already liked");
       }
-      console.log(commentId);
     }
     res.status(StatusCodes.OK).json(comment);
   } catch (e) {

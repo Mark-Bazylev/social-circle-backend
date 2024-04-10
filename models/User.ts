@@ -1,7 +1,7 @@
-import mongoose, { Schema, Document, ObjectId } from "mongoose";
+import mongoose, {Document, ObjectId, Schema} from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import { emailRegex } from "../utils";
+import {emailRegex} from "../utils";
 
 // User schema fields
 export interface UserDetails {
@@ -43,9 +43,6 @@ UserSchema.methods.createJWT = function () {
 UserSchema.methods.comparePassword = async function (
     candidatePassword: string,
 ) {
-  const isMatch = await bcrypt.compare(candidatePassword, this.password);
-  console.log(candidatePassword, this.password);
-  console.log(isMatch);
-  return isMatch;
+  return await bcrypt.compare(candidatePassword, this.password);
 };
 export default mongoose.model("User", UserSchema);
